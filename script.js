@@ -33,3 +33,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if (target){
       ev.preventDefault();
       target.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+});
