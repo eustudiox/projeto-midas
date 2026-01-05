@@ -33,6 +33,101 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if (target){
       ev.preventDefault();
       target.scrollIntoView({behavior:'smooth', block:'start'});
+      /* =========================
+   MOBILE FIXES (até 768px)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Container geral */
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Header / menu */
+  header,
+  .header,
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* Botões do hero */
+  .hero .actions,
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Grids viram coluna */
+  .grid,
+  .cards,
+  .pricing,
+  .features {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cards */
+  .card {
+    padding: 20px;
+  }
+
+  /* Seção Pacotes (caso exista mais de 1) */
+  .pricing.single {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+  }
+
+  footer .wrap {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* WhatsApp floating button */
+  .whatsapp,
+  .whatsapp-btn {
+    right: 16px;
+    bottom: 16px;
+    transform: scale(0.9);
+  }
+
+}
+
     }
   });
 });
