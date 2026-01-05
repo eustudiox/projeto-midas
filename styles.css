@@ -322,102 +322,190 @@ footer{padding: 30px 0 60px; border-top:1px solid var(--line); color:var(--muted
   color: var(--muted);
 }
 /* =========================
-   MOBILE HARD FIX (iPhone)
+   MOBILE FIXES (até 768px)
    ========================= */
-*,
-*::before,
-*::after { box-sizing: border-box; }
+@media (max-width: 768px) {
 
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
+  /* Container geral */
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.wrap {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-@media (max-width: 900px) {
-  .wrap { padding-left: 16px; padding-right: 16px; }
-
-  /* Evita elementos “vazando” e entortando */
-  section, header, footer { overflow-x: hidden; }
-
-  /* Header / Navbar: quebra em coluna */
-  header .wrap,
-  .header .wrap,
-  nav .wrap {
-    display: flex;
+  /* Header / menu */
+  header,
+  .header,
+  nav {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
   }
 
-  nav ul,
-  .nav ul,
-  .menu {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 10px;
-    padding: 0;
-    margin: 0;
-  }
-
-  nav a { font-size: 14px; }
-
-  /* Botões: 100% largura no mobile */
-  .btn,
-  a.btn,
-  button.btn {
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-  }
-
-  .actions,
-  .hero-actions,
-  .cta-row {
-    display: flex;
+  nav ul {
     flex-direction: column;
     gap: 12px;
     width: 100%;
   }
 
-  /* Tipografia do hero */
-  h1 { font-size: 34px !important; line-height: 1.12 !important; }
-  p  { font-size: 15px; }
+  nav a {
+    font-size: 14px;
+  }
 
-  /* Tudo que for grid vira 1 coluna */
-  .pricing,
-  .cards,
+  /* Hero */
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* Botões do hero */
+  .hero .actions,
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Grids viram coluna */
   .grid,
-  .features,
-  .steps,
-  .columns {
-    display: grid;
+  .cards,
+  .pricing,
+  .features {
     grid-template-columns: 1fr !important;
-    gap: 16px !important;
   }
 
-  /* Cards não “esticam” */
-  .card { width: 100%; max-width: 100%; }
+  /* Cards */
+  .card {
+    padding: 20px;
+  }
 
-  /* Botão WhatsApp flutuante não sair da tela */
+  /* Seção Pacotes (caso exista mais de 1) */
+  .pricing.single {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+  }
+
+  footer .wrap {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* WhatsApp floating button */
   .whatsapp,
   .whatsapp-btn {
-    right: 14px !important;
-    bottom: 14px !important;
-    transform: scale(.92);
+    right: 16px;
+    bottom: 16px;
+    transform: scale(0.9);
   }
+
+}
+/* =========================
+   MOBILE FIXES (até 768px)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Container geral */
+  .wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Header / menu */
+  header,
+  .header,
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* Botões do hero */
+  .hero .actions,
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .hero .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Grids viram coluna */
+  .grid,
+  .cards,
+  .pricing,
+  .features {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cards */
+  .card {
+    padding: 20px;
+  }
+
+  /* Seção Pacotes (caso exista mais de 1) */
+  .pricing.single {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+  }
+
+  footer .wrap {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* WhatsApp floating button */
+  .whatsapp,
+  .whatsapp-btn {
+    right: 16px;
+    bottom: 16px;
+    transform: scale(0.9);
+  }
+
 }
