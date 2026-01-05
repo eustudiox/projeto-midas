@@ -509,3 +509,36 @@ footer{padding: 30px 0 60px; border-top:1px solid var(--line); color:var(--muted
   }
 
 }
+/* =========================
+   FIX VISIBILIDADE GERAL
+   ========================= */
+
+/* garante scroll normal */
+html, body {
+  min-height: 100%;
+  height: auto !important;
+  overflow-y: auto !important;
+}
+
+/* força todas as sections a aparecerem */
+section {
+  position: relative !important;
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+/* se existir hero/main com 100vh, corrige */
+.hero,
+.main,
+#hero {
+  min-height: 100vh;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* impede que gradientes escondam conteúdo */
+.hero::before,
+.hero::after {
+  pointer-events: none;
+}
